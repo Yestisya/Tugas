@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+th {
+  background-color: #ba0000;
+  color: white;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.proses-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Menghitung Nilai Akhir Mahasiswa</h2>
+
+<div class="form-container">
+  <label for="nim">NIM:</label>
+  <input type="text" id="nim" name="nim" value="1482300058">
+
+  <label for="nama">Nama Mahasiswa:</label>
+  <input type="text" id="nama" name="nama" value="Yestisya Adritama Filimon">
+
+  <label for="tugas">Tugas:</label>
+  <input type="text" id="tugas" name="tugas" value="80">
+
+  <label for="quiz">Quiz:</label>
+  <input type="text" id="quiz" name="quiz" value="90">
+
+  <label for="uts">UTS:</label>
+  <input type="text" id="uts" name="uts" value="90">
+
+  <label for="uas">UAS:</label>
+  <input type="text" id="uas" name="uas" value="80">
+
+  <label for="nilai">Nilai Akhir:</label>
+  <input type="text" id="nilai" name="nilai" value="90">
+
+  <label for="grade">Grade:</label>
+  <input type="text" id="grade" name="grade" value="A">
+
+  <button class="proses-button" onclick="proses()">Proses</button>
+</div>
+
+<table>
+  <tr>
+    <th>NIM</th>
+    <th>Nama</th>
+    <th>Tugas</th>
+    <th>Quiz</th>
+    <th>UTS</th>
+    <th>UAS</th>
+    <th>Nilai akhir</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>Abi</td>
+    <td>90</td>
+    <td>85</td>
+    <td>75</td>
+    <td>80</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td>Bagas</td>
+    <td>85</td>
+    <td>75</td>
+    <td>60</td>
+    <td>70</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>Caca</td>
+    <td>90</td>
+    <td>70</td>
+    <td>80</td>
+    <td>85</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td>Tiara</td>
+    <td>90</td>
+    <td>80</td>
+    <td>75</td>
+    <td>70</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>55</td>
+    <td>Andre</td>
+    <td>80</td>
+    <td>85</td>
+    <td>90</td>
+    <td>80</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>58</td>
+    <td>Yestiya Adritama Filimon</td>
+    <td>80</td>
+    <td>90</td>
+    <td>90</td>
+    <td>80</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<p>Nilai akhir = (0.2*Tugas)+(0.2*Quiz)+(0.3*UTS)+(0.3*UAS)</p>
+<p>A - NA > 85 C - NA > 60 E - NA > 30</p>
+<p>B - NA > 70 D - NA > 40 F - NA > 0</p>
+
+<script>
+function proses() {
+  var tugas = document.getElementById("tugas").value;
+  var quiz = document.getElementById("quiz").value;
+  var uts = document.getElementById("uts").value;
+  var uas = document.getElementById("uas").value;
+
+  var nilaiAkhir = (0.2 * parseFloat(tugas)) + (0.2 * parseFloat(quiz)) + (0.3 * parseFloat(uts)) + (0.3 * parseFloat(uas));
+
+  document.getElementById("nilai").value = nilaiAkhir.toFixed(2);
+
+  var grade;
+  if (nilaiAkhir >= 85) {
+    grade = "A";
+  } else if (nilaiAkhir >= 70) {
+    grade = "B";
+  } else if (nilaiAkhir >= 60) {
+    grade = "C";
+  } else if (nilaiAkhir >= 40) {
+    grade = "D";
+  } else {
+    grade = "E";
+  }
+
+  document.getElementById("grade").value = grade;
+}
+</script>
+
+</body>
+</html>
