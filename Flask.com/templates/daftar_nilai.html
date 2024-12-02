@@ -1,0 +1,64 @@
+<h3>Daftar Nilai</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mata Kuliah</th>
+            <th>SKS</th>
+            <th>Nilai</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for n in nilai %}
+        <tr>
+            <td>{{ n.mata_kuliah }}</td>
+            <td>{{ n.sks }}</td>
+            <td>{{ n.nilai }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Rekayasa Perangkat Lunak</td>
+            <td>3</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>Pemrograman Web</td>
+            <td>4</td>
+            <td>B+</td>
+        </tr>
+        <tr>
+            <td>Manajemen Data</td>
+            <td>3</td>
+            <td>A-</td>
+        </tr>
+        <tr>
+            <td>Bahasa Indonesia</td>
+            <td>4</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>Pendidikan Pancasila</td>
+            <td>2</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>Manajemen Sistem</td>
+            <td>3</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>Sistem Enterpirce</td>
+            <td>3</td>
+            <td>B+</td>
+        </tr>
+        <tr>
+            <td>Kewarganegaraan</td>
+            <td>3</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>Jaringan Komputer</td>
+            <td>3</td>
+            <td>A</td>
+        </tr>
+    </tbody>
+</table>

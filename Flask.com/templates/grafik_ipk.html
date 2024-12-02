@@ -1,0 +1,41 @@
+<h3>Grafik IPK</h3>
+<p>Data IPK per semester:</p>
+<ul>
+    {% for ipk in data_ipk %}
+    <li>Semester {{ loop.index }}: {{ ipk }}</li>
+    {% endfor %}
+</ul>
+
+<canvas id="ipkChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ipkData = [3.5, 3.7, 3.9];
+
+    const ctx = document.getElementById('ipkChart').getContext('2d');
+    const ipkChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Semester 1', 'Semester 2', 'Semester 3'],
+            datasets: [{
+                label: 'IPK',
+                data: ipkData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                fill: false,
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    min: 0,
+                    max: 4,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+</script>
