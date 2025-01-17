@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/data.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    
+    <div class="excel-form">
+        <h1>Data Mahasiswa</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if not student %}
+        <form method="POST">
+            <div class="excel-grid">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" required>
+
+                <label for="nim">NIM</label>
+                <input type="text" id="nim" name="nim" required>
+
+                <label for="jurusan">Jurusan</label>
+                <input type="text" id="jurusan" name="jurusan" required>
+
+                <label for="program_studi">Program Studi</label>
+                <input type="text" id="program_studi" name="program_studi" required>
+            </div>
+            <button type="submit">Simpan Data</button>
+        </form>
+        {% else %}
+        <div class="excel-table">
+            <table>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                    <th>Program Studi</th>
+                </tr>
+                <tr>
+                    <td>{{ student[1] }}</td>
+                    <td>{{ student[2] }}</td>
+                    <td>{{ student[3] }}</td>
+                    <td>{{ student[4] }}</td>
+                </tr>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

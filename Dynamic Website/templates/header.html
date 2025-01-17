@@ -1,0 +1,20 @@
+<header>
+  <div class="header-container">
+    <div class="profil">
+      <div class="profil-lingkaran">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+        <img src="{{ url_for('static', filename='images/account.png') }}" alt="Profil">
+      </div>
+      <div class="profil-nama">
+        <h2>{{ session['username'] }}</h2>
+      </div>
+    </div>
+    <nav class="navmenu">
+      <ul>
+        <li><a href="{{ url_for('datadiri') }}">Data Diri</a></li>
+        <li><a href="{{ url_for('krs') }}">KRS</a></li>
+        <li><a class="logout" href="{{ url_for('logout') }}">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

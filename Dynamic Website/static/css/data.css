@@ -1,0 +1,135 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Styling khusus untuk form data diri */
+.excel-form {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.excel-form h1 {
+    color: #217346;
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #217346;
+}
+
+/* Grid layout untuk form */
+.excel-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1px;
+    border: 1px solid #e0e0e0;
+    background: #f3f3f3; /* Warna background untuk gap */
+    margin-bottom: 20px;
+}
+
+/* Styling untuk label (seperti header kolom) */
+.excel-grid label {
+    background: #f8f9fa;
+    padding: 10px;
+    font-weight: 500;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+/* Styling untuk input */
+.excel-grid input {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    margin: 0;
+}
+
+/* Efek hover dan focus */
+.excel-grid input:hover {
+    background-color: #f0f0f0;
+}
+
+.excel-grid input:focus {
+    background-color: white;
+    border: 2px solid #217346;
+    position: relative;
+    z-index: 1;
+}
+
+/* Styling untuk tombol */
+.excel-form button {
+    background-color: #217346;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.excel-form button:hover {
+    background-color: #1a5c38;
+}
+
+/* Styling untuk tabel data yang sudah diinput */
+.excel-table {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+}
+
+.excel-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.excel-table td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    background: white;
+}
+
+.excel-table tr:hover td {
+    background-color: #f0f0f0;
+}
+
+/* Flash messages */
+.flash-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.flash-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}

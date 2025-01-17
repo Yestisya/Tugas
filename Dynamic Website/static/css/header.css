@@ -1,0 +1,75 @@
+/* Gaya header dan navbar */
+header {
+  background-image: url('../images/asap.jpg'); /* Ganti dengan path yang sesuai */
+  background-size: cover; /* Mengatur gambar agar menutupi seluruh area header */
+  background-position: center; /* Memusatkan gambar */
+  color: white; /* Warna teks putih */
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Gaya untuk kontainer header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* Gaya profil */
+.profil {
+  display: flex;
+  align-items: center;
+}
+
+.profil-lingkaran img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.profil-nama h2 {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+/* Gaya untuk navmenu */
+.navmenu {
+  display: flex;
+}
+
+.navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10;
+  display: flex;
+}
+
+.navmenu ul li {
+  margin-left: 10px;
+}
+
+.navmenu ul li a {
+  color: white; /* Warna teks putih untuk menu */
+  text-decoration: none;
+  font-size: 14px;
+  transition: transform 0.3s, font-size 0.3s; /* Tambahkan transisi untuk efek */
+}
+
+.navmenu ul li a:hover {
+  transform: scale(1.2); /* Membesarkan teks saat hover */
+  font-size: 16px; /* Ukuran font saat hover */
+}
+
+/* Gaya untuk tombol logout */
+.navmenu li a.logout {
+  background-color: red; /* Warna merah untuk tombol logout */
+  color: white; /* Warna teks putih */
+  padding: 10px 15px; /* Padding untuk tombol */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  border-radius: 5px; /* Sudut membulat */
+}
+
+.navmenu li a.logout:hover {
+  background-color: darkred; /* Warna lebih gelap saat hover */
+}
